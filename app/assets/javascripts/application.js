@@ -14,3 +14,38 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+ function alex(){
+ 	alert("kjdklfa");
+ }
+
+function initialize(){
+	// Provide your access token
+	L.mapbox.accessToken = 'pk.eyJ1IjoiYWxleHJpdmFkZW5laXJhIiwiYSI6ImI5ZTZlOWY4NmUwYjFjZjg5ZjkzYTFjZjJkNGE2ODY2In0.1sttmA0ov3ht6S4SD_yJtw';
+	// Create a map in the div #map
+	L.mapbox.map('map', 'alexrivadeneira.mkojlckm');	
+
+
+    var geocoderControl = L.mapbox.geocoderControl('mapbox.places', {
+      autocomplete: true
+    });
+
+    geocoderControl.addTo(map);
+
+
+ }
+
+ var marker;
+  var markerLat;
+  var markerLong;
+
+  function setDraggableMarker(callback){
+    marker = L.marker([0,0], {
+      icon: L.mapbox.marker.icon({
+        'marker-color': '#f86767'
+      }),
+      draggable: true
+    }).addTo(map);
+    callback();
+  }
