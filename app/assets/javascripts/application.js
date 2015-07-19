@@ -24,28 +24,20 @@ function initialize(){
 	// Provide your access token
 	L.mapbox.accessToken = 'pk.eyJ1IjoiYWxleHJpdmFkZW5laXJhIiwiYSI6ImI5ZTZlOWY4NmUwYjFjZjg5ZjkzYTFjZjJkNGE2ODY2In0.1sttmA0ov3ht6S4SD_yJtw';
 	// Create a map in the div #map
-	L.mapbox.map('map', 'alexrivadeneira.mkojlckm');	
+	var map = L.mapbox.map('map', 'alexrivadeneira.mkojlckm');	
 
 
-    var geocoderControl = L.mapbox.geocoderControl('mapbox.places', {
-      autocomplete: true
-    });
-
-    geocoderControl.addTo(map);
-
+// L.marker is a low-level marker constructor in Leaflet.
+L.marker([37.9, -77], {
+    icon: L.mapbox.marker.icon({
+        'marker-size': 'large',
+        'marker-symbol': 'bus',
+        'marker-color': '#fa0'
+    })
+}).addTo(map);
 
  }
 
- var marker;
-  var markerLat;
-  var markerLong;
 
-  function setDraggableMarker(callback){
-    marker = L.marker([0,0], {
-      icon: L.mapbox.marker.icon({
-        'marker-color': '#f86767'
-      }),
-      draggable: true
-    }).addTo(map);
-    callback();
-  }
+
+
