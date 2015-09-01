@@ -28,5 +28,17 @@
 #map { position:absolute; top:100px; width:100%; }
 
 
+#click_area{
+	position: fixed;
+	bottom: 40px;
+	left: 40px;
+	background-color: red;
+	height: 200px;
+	width: 400px;
+}
 
+#click_area h2{
+	font-family: sans-serif;
+
+}
   

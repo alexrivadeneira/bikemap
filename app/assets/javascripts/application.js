@@ -16,6 +16,7 @@
 //= require_tree .
 
 
+
  function alex(){
  	alert("kjdklfa");
  }
@@ -35,8 +36,17 @@ L.marker([37.9, -77], {
         'marker-color': '#fa0'
     })
 }).addTo(map);
+}
 
- }
+var click = document.getElementById('click'),
+var mousemove = document.getElementById('mousemove');
+
+//var map = L.mapbox.map('map', 'mapbox.streets');
+
+map.on('mousemove click', function(e) {
+    console.log(e.latlng);
+
+
 
 
 
